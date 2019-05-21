@@ -16,7 +16,8 @@ namespace MVC_Demo.Controllers
                                     "India",
                                     "US",
                                     "UK",
-                                    "Canada"
+                                    "Canada",
+                                    "Australia"
                                 };
 
             return View();
