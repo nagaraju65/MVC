@@ -12,8 +12,14 @@ namespace MVC_Demo.Controllers
         // GET: Employee
         public ActionResult Details()
         {
-            Employee employee = new Employee() { Name = "Nagaraju", Age = 28, Gender = "Male" };
-            return View(employee);
+            //Using employee object hard coding
+            //Employee employee = new Employee() { Name = "Nagaraju", Age = 28, Gender = "Male" };
+
+            //using Entity Framework connecting to Database
+            EmployeeContext employeeContext = new EmployeeContext();
+            Employee employees = employeeContext.Employees.Single(emp => emp.Id == 1);
+
+            return View(employees);
         }
     }
 }
