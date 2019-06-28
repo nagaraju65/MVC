@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MVC_Demo.Models
+namespace BusinessLayer
 {
-    [Table("tblEmployee")]
     public class Employee
     {
         public int Id { get; set; }
@@ -14,6 +13,5 @@ namespace MVC_Demo.Models
         public int Age { get; set; }
         public string Gender { get; set; }
 
-        public int DepartmentID { get; set; }
     }
 }

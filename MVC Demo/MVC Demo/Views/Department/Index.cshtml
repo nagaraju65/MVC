@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MVC_Demo.Models.Department>
+
+<div>
+    <h4>Department</h4>
+    <ul>
+        @foreach (var Department in @Model)
+        {
+            <li>
+                @Html.ActionLink(Department.DepartmentName,"Details","Employee",new { id = Department.DepartmentId},null)
+            </li>
+        }
+        
+
+    </ul>
+
+</div>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DepartmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
