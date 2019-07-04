@@ -58,5 +58,11 @@ namespace MVC_Demo.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+           return View();
+        }
+
     }
 }

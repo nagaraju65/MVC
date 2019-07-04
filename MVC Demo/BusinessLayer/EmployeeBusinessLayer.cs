@@ -22,10 +22,16 @@ namespace BusinessLayer
                     SqlCommand cmd = new SqlCommand("Select Id, name, age, gender from tblEmployee", con);
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
-                    
+
                     while (rdr.Read())
                     {
-                        emps.Add(new Employee() { Id = int.Parse(rdr["Id"].ToString()), Age = int.Parse(rdr["age"].ToString()), Gender = rdr["gender"].ToString(), Name = rdr["name"].ToString() });
+                        emps.Add(new Employee()
+                        {
+                            Id = int.Parse(rdr["Id"].ToString()),
+                            Age = int.Parse(rdr["age"].ToString()),
+                            Gender = rdr["gender"].ToString(),
+                            Name = rdr["name"].ToString()
+                        });
                     }
 
                     con.Close();
