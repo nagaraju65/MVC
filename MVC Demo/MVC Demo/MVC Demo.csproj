@@ -174,6 +174,7 @@
     <Content Include="Views\Employee\EmployeeDetails.cshtml" />
     <Content Include="Views\Employee\BO_Index.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -51,7 +51,7 @@ namespace MVC_Demo.Controllers
 
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
 
-            List<BusinessLayer.Employee> emps = employeeBusinessLayer.Employees.ToList();
+            List<BusinessLayer.BO_Employee> emps = employeeBusinessLayer.Employees.ToList();
 
             return View(emps);
 
@@ -64,5 +64,47 @@ namespace MVC_Demo.Controllers
            return View();
         }
 
+        //[HttpPost]
+        //public ActionResult Create(FormCollection formCollection)
+        //{
+        //    foreach (var key in formCollection.AllKeys)
+        //    {
+        //        Response.Write("Key = " + key + " ; Value = " + formCollection[key]);
+        //        Response.Write("<br/>");
+        //    }
+        //    return View();
+        //    //return RedirectToAction("BO_Index");
+        //}
+
+        //[HttpPost]
+        //[ActionName("Create")]
+        //public ActionResult Create_Post(Models.Employee employee)
+        //{
+           
+        //    Response.Write("Name : " + employee.Name + "<br/> Age : " + employee.Age.ToString() + "<br/> Gender : " + employee.Gender);
+        //    return View();
+        //    //return RedirectToAction("BO_Index");
+        //}
+
+        [HttpPost]
+        [ActionName("Create")]
+        public ActionResult Create_Post()
+        {
+            Models.Employee employee = new Models.Employee();
+            bool result = TryUpdateModel<Models.Employee>(employee);
+
+            Response.Write(result.ToString() + "<br/> Name : " + employee.Name + "<br/> Age : " + employee.Age.ToString() + "<br/> Gender : " + employee.Gender);
+            return View();
+            //return RedirectToAction("BO_Index");
+        }
+
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            BusinessLayer.BO_Employee employee = employeeBusinessLayer.Employees.Single(emp => emp.Id == id);
+            return View(employee);
+        }
     }
 }

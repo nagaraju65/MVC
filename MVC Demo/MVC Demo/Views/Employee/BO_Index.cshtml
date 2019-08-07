@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BusinessLayer.Employee>
+﻿@model IEnumerable<BusinessLayer.BO_Employee>
 
 
 <div style="font-family:Arial">
@@ -35,7 +35,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "EmployeeDetails", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
             </tr>

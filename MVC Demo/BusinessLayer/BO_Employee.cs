@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class Employee
+    public class BO_Employee
     {
         public int Id { get; set; }
         public string Name { get; set; }

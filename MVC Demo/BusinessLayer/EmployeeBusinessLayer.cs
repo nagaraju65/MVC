@@ -11,11 +11,11 @@ namespace BusinessLayer
 {
     public class EmployeeBusinessLayer
     {
-        public IEnumerable<Employee> Employees
+        public IEnumerable<BO_Employee> Employees
         {
             get
             {
-                var emps = new List<Employee>();
+                var emps = new List<BO_Employee>();
                 string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(cs))
                 {
@@ -25,7 +25,7 @@ namespace BusinessLayer
 
                     while (rdr.Read())
                     {
-                        emps.Add(new Employee()
+                        emps.Add(new BO_Employee()
                         {
                             Id = int.Parse(rdr["Id"].ToString()),
                             Age = int.Parse(rdr["age"].ToString()),

@@ -14,7 +14,7 @@ namespace UnitTestProject1
         public void EmployeesProperty()
         {
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
-            List<Employee> emps = employeeBusinessLayer.Employees.ToList();
+            List<BO_Employee> emps = employeeBusinessLayer.Employees.ToList();
 
             Assert.AreEqual(4, emps.Count);
             
