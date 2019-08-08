@@ -40,5 +40,24 @@ namespace BusinessLayer
                 return emps;
             }
         }
+
+        public int InsertEmployee(BO_Employee employee)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("spInsert_Employee", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter P_Name = new SqlParameter("@Name", employee.Name);
+                cmd.Parameters.Add(P_Name);
+                SqlParameter P_Age = new SqlParameter("@Age", employee.Age);
+                cmd.Parameters.Add(P_Age);
+                SqlParameter P_Gender = new SqlParameter("@Gender", employee.Gender);
+                cmd.Parameters.Add(P_Gender);
+                con.Open();
+                return cmd.ExecuteNonQuery();
+             }
+
+        }
     }
 }

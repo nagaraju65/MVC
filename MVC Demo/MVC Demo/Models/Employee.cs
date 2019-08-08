@@ -13,7 +13,6 @@ namespace MVC_Demo.Models
         public string Name { get; set; }
         public int? Age { get; set; }
         public string Gender { get; set; }
-
-        public int DepartmentID { get; set; }
+        public int? DepartmentID { get; set; }
     }
 }

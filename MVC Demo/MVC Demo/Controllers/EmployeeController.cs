@@ -90,12 +90,18 @@ namespace MVC_Demo.Controllers
         [ActionName("Create")]
         public ActionResult Create_Post()
         {
-            Models.Employee employee = new Models.Employee();
-            bool result = TryUpdateModel<Models.Employee>(employee);
+            BO_Employee employee = new BO_Employee();
+            bool result = TryUpdateModel<BO_Employee>(employee);
 
-            Response.Write(result.ToString() + "<br/> Name : " + employee.Name + "<br/> Age : " + employee.Age.ToString() + "<br/> Gender : " + employee.Gender);
-            return View();
-            //return RedirectToAction("BO_Index");
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+
+            //Response.Write(result.ToString() + "<br/> Name : " + employee.Name + "<br/> Age : " + employee.Age.ToString() + "<br/> Gender : " + employee.Gender);
+            int rowsInserted = employeeBusinessLayer.InsertEmployee(employee);
+            //return View();
+            if (rowsInserted > 0)
+                return RedirectToAction("BO_Index");
+            else
+                return View();
         }
 
 
