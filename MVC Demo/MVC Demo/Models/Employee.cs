@@ -14,5 +14,6 @@ namespace MVC_Demo.Models
         public int? Age { get; set; }
         public string Gender { get; set; }
         public int? DepartmentID { get; set; }
+
     }
 }
