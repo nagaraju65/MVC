@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MVC_Demo_2.Models.City>
+
+<h2>Check Box generation</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel();
+
+    <br />
+    <br />
+    <input id="Submut" type="submit" value="Submit" />
+}
+

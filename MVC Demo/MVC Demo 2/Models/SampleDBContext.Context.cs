@@ -26,7 +26,6 @@ namespace MVC_Demo_2.Models
         }
     
         public virtual DbSet<Department> Departments { get; set; }
-
-        public System.Data.Entity.DbSet<MVC_Demo_2.Models.Company> Companies { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
     }
 }

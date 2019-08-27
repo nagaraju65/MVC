@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVC_Demo_2.Models;
+using System.Text;
 
 namespace MVC_Demo_2.Controllers
 {
@@ -29,6 +30,36 @@ namespace MVC_Demo_2.Controllers
             {
                 return "You have selected the department :" + company.SelectedDepartment;
             }
+        }
+
+        [HttpGet]
+        public ActionResult CheckBox()
+        {
+            DBContext db = new DBContext();
+            return View(db.Cities);
+        }
+
+        [HttpPost]
+        public string CheckBox(IEnumerable<City> Cities)
+        {
+            if (Cities.Count(c=>c.isselected)==0)
+            {
+                return "You have not selected any City";
+
+            }
+            else
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("You have selected - ");
+                foreach (var city in Cities.Where(c => c.isselected))
+                {
+                    sb.Append(city.name + ",");
+                }
+                sb.Remove(sb.ToString().LastIndexOf(","), 1);
+
+                return sb.ToString();
+            }
+            
         }
     }
 }
