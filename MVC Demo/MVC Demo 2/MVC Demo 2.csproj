@@ -169,6 +169,7 @@
     <Compile Include="Models\City.cs">
       <DependentUpon>SampleDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CityViewModel.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Department.cs">
       <DependentUpon>SampleDBContext.tt</DependentUpon>
@@ -188,6 +189,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleDBContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SelectListItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +211,7 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\EditorTemplates\City.cshtml" />
     <Content Include="Views\Home\CheckBox.cshtml" />
+    <Content Include="Views\Home\ListBox.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

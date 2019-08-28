@@ -1,0 +1,10 @@
+﻿@model MVC_Demo_2.Models.CityViewModel
+
+<h2>List Box Example</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ListBoxFor(m => m.SelectedCities,Model.ListSelectListItem)
+    <br />
+    <input  type="submit" value="submit" />
+}

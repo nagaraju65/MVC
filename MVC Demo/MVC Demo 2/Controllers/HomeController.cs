@@ -42,7 +42,7 @@ namespace MVC_Demo_2.Controllers
         [HttpPost]
         public string CheckBox(IEnumerable<City> Cities)
         {
-            if (Cities.Count(c=>c.isselected)==0)
+            if (Cities.Count(c => c.isselected) == 0)
             {
                 return "You have not selected any City";
 
@@ -58,6 +58,43 @@ namespace MVC_Demo_2.Controllers
                 sb.Remove(sb.ToString().LastIndexOf(","), 1);
 
                 return sb.ToString();
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult ListBox()
+        {
+            DBContext db = new DBContext();
+            CityViewModel CVM = new CityViewModel();
+            List<SelectListItemModel> ListSelectListItem = new List<SelectListItemModel>();
+
+            foreach (var City in db.Cities)
+            {
+                SelectListItemModel selectListItem = new SelectListItemModel()
+                {
+                    Text = City.name,
+                    Value = City.id.ToString(),
+                    Selected = City.isselected
+                };
+                ListSelectListItem.Add(selectListItem);
+            }
+
+            CVM.ListSelectListItem = ListSelectListItem;
+
+            return View(CVM);
+        }
+
+        [HttpPost]
+        public string ListBox(CityViewModel CVM)
+        {
+            if (CVM.SelectedCities == null)
+            {
+                return "You have not selected any City";
+            }
+            else
+            {
+                return "You have selected - " + string.Join(",", CVM.SelectedCities);
             }
             
         }
