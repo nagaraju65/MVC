@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC Demo 2", "MVC Demo 2\MV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterFunctionality", "FilterFunctionality\FilterFunctionality.csproj", "{2CBA6205-0E7C-4134-9B41-C21B7A981E49}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC examples", "MVC examples", "{254F8EEA-3D80-4888-84B8-9CF04F11F4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterFunctionality_Paging", "FilterFunctionality2\FilterFunctionality_Paging.csproj", "{7FA78AD3-04D6-4F1E-9CA9-9D74F995D322}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +43,16 @@ Global
 		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA78AD3-04D6-4F1E-9CA9-9D74F995D322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA78AD3-04D6-4F1E-9CA9-9D74F995D322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA78AD3-04D6-4F1E-9CA9-9D74F995D322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA78AD3-04D6-4F1E-9CA9-9D74F995D322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CBA6205-0E7C-4134-9B41-C21B7A981E49} = {254F8EEA-3D80-4888-84B8-9CF04F11F4DC}
+		{7FA78AD3-04D6-4F1E-9CA9-9D74F995D322} = {254F8EEA-3D80-4888-84B8-9CF04F11F4DC}
 	EndGlobalSection
 EndGlobal

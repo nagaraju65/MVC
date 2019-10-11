@@ -1,4 +1,7 @@
-﻿@model IEnumerable<FilterFunctionality.Models.Employee1>
+﻿@using PagedList.Mvc;
+@using PagedList;
+
+@model IPagedList<FilterFunctionality.Models.Employee1>
 
 @{
     ViewBag.Title = "Index";
@@ -23,13 +26,13 @@
 <table class="table" border="1">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.First().Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gender)
+            @Html.DisplayNameFor(model => model.First().Gender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.First().Email)
         </th>
         <th>
             Actions
@@ -66,3 +69,6 @@
     }
 
 </table>
+
+@Html.PagedListPager(Model,page => Url.Action("Index","Home",new { page,
+    searchBy = Request["searchBy"], search = Request["search"]}),new PagedListRenderOptions {Display = PagedListDisplayMode.IfNeeded , DisplayItemSliceAndTotal = true, DisplayPageCountAndCurrentLocation = true })
