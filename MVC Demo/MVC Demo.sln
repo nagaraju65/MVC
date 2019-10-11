@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC Demo 2", "MVC Demo 2\MVC Demo 2.csproj", "{8213ED49-A55A-4E2A-B7B1-524B46F31BEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterFunctionality", "FilterFunctionality\FilterFunctionality.csproj", "{2CBA6205-0E7C-4134-9B41-C21B7A981E49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8213ED49-A55A-4E2A-B7B1-524B46F31BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8213ED49-A55A-4E2A-B7B1-524B46F31BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8213ED49-A55A-4E2A-B7B1-524B46F31BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CBA6205-0E7C-4134-9B41-C21B7A981E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
